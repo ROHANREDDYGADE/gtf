@@ -35,7 +35,7 @@ const UserCreateProduct = () => {
   // Get all categories
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("https://gtf-lemon.vercel.app/category/get-category");
+      const { data } = await axios.get("/api/v1/category/get-category");
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -61,7 +61,7 @@ const UserCreateProduct = () => {
       productData.append("photo", photo);
       productData.append("category", category);
       const { data } = await axios.post(
-        "https://gtf-lemon.vercel.app/product/user-create-product",
+        "/api/v1/product/user-create-product",
         productData
       );
       if (data?.success) {

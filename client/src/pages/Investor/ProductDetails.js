@@ -22,7 +22,7 @@ const ProductDetails = () => {
       if (lastPartOfUrl) {
         try {
             console.log(lastPartOfUrl)
-          const { data } = await axios.get(`https://gtf-lemon.vercel.app/product/get-product/${lastPartOfUrl}`);
+          const { data } = await axios.get(`/api/v1/product/get-product/${lastPartOfUrl}`);
           setProduct(data?.product);
         } catch (error) {
           console.log(error);
@@ -39,7 +39,7 @@ const ProductDetails = () => {
         <div className="col-md-6">
           {product._id && (
             <img
-              src={`https://gtf-lemon.vercel.app/product/product-photo/${product._id}`}
+              src={`/api/v1/product/product-photo/${product._id}`}
               className="card-img-top"
               alt={product.name}
               height="300"

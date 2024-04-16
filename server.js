@@ -23,9 +23,9 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 //routes
-app.use("https://gtf-lemon.vercel.app/auth", authRoutes);
-app.use("https://gtf-lemon.vercel.app/category", categoryRoutes);
-app.use("https://gtf-lemon.vercel.app/product", productRoutes);
+app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/category", categoryRoutes);
+app.use("/api/v1/product", productRoutes);
 //rest api
 app.get("/", (req, res) => {
   res.send("<h1>Welcome to ecommerce app</h1>");

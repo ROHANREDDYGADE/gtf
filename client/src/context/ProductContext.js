@@ -10,7 +10,7 @@ export const ProductProvider = ({ children }) => {
   useEffect(() => {
     const fetchProductDetails = async (slug) => {
       try {
-        const { data } = await axios.get(`https://gtf-lemon.vercel.app/product/get-product/${slug}`);
+        const { data } = await axios.get(`/api/v1/product/get-product/${slug}`);
         setProduct(data?.product);
       } catch (error) {
         console.log(error);
