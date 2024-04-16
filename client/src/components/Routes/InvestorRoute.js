@@ -11,7 +11,7 @@ export default function InvestorRoute() {
   useEffect(() => {
     const authCheck = async () => {
       try {
-        const res = await axios.get("/api/v1/auth/investor-auth");
+        const res = await axios.get("https://gtf-lemon.vercel.app/auth/investor-auth");
         if (res.data.ok) {
           setOk(true);
         } else {

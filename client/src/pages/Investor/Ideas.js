@@ -13,7 +13,7 @@ const Ideas = () => {
   // Get all categories
   const getAllCategories = async () => {
     try {
-      const { data } = await axios.get("/api/v1/category/get-category");
+      const { data } = await axios.get("https://gtf-lemon.vercel.app/category/get-category");
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -25,7 +25,7 @@ const Ideas = () => {
   // Get all products
   const getAllProducts = async () => {
     try {
-      const { data } = await axios.get("/api/v1/product/get-product");
+      const { data } = await axios.get("https://gtf-lemon.vercel.app/product/get-product");
       setProducts(data.products);
     } catch (error) {
       console.log(error);
@@ -55,7 +55,7 @@ const Ideas = () => {
   // Filter products based on checked categories
   const filterProducts = async () => {
     try {
-      const { data } = await axios.post("/api/v1/product/product-filters", {
+      const { data } = await axios.post("https://gtf-lemon.vercel.app/product/product-filters", {
         checked,
       });
       setProducts(data?.products);
@@ -94,7 +94,7 @@ const Ideas = () => {
             {products?.map((p) => (
               <div className="card m-2" style={{ width: "18rem" }} key={p._id}>
                 <img
-                  src={`/api/v1/product/product-photo/${p._id}`}
+                  src={`https://gtf-lemon.vercel.app/product/product-photo/${p._id}`}
                   className="card-img-top"
                   alt={p.name}
                 />
